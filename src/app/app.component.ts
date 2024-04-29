@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CourseService } from './service/course.service';
+import { Icource } from './interface/course';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  courceobj!:Icource[]
   title = 'couresemodulematerial';
+  constructor(private _course:CourseService){
+    
+  
+  
+
+
+
+  }
 }

@@ -1,0 +1,36 @@
+
+
+<form [formGroup]="courseForm">
+    <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="description">
+      </mat-form-field>
+      <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>Select Category</mat-label>
+        <mat-select formControlName="category">
+            <mat-option value="BEGINNER">
+                BEGINNER
+            </mat-option>
+            <mat-option value="ADVANCED">
+                ADVANCED
+            </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field color="accent" appearance="fill" class="w-100">
+        <mat-label>Released At</mat-label>
+        <input matInput [matDatepicker]="picker1" formControlName="releasedDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      <mat-error *ngIf="f['releasedDate'].hasError('required')">This field is required.</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill" class="w-100">
+        <mat-label>Long Description</mat-label>
+        <textarea matInput placeholder="Long Description here.." formControlName="longDescription"></textarea>
+      </mat-form-field>
+            
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="button" (click)="close()">Close</button>
+        <button mat-raised-button color="accent" (click)="updatefun()"  type="button">update</button>
+      </mat-card-actions>
+<form>

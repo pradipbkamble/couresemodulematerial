@@ -1,0 +1,42 @@
+
+<div class="course">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <ng-container *ngIf="(courseObj$ |async) as course">
+<h2>
+    {{course.description}}
+</h2>
+<img [src]="course.iconUrl" [alt]="course.description" [title]="course.description">
+            </ng-container>
+
+            
+        </div>
+    </div>
+</div>
+<div class="col-md-8 offset-md-2">
+    <form [formGroup]="lessonForm">
+        <mat-form-field>
+            <!-- <input type="text" matInput placeholder="Search Items here.." class="my-4 w-100"
+            (input)="onSearch($event)"> -->
+            <input type="text" matInput placeholder="Search Items Here.."
+            formControlName="lesson">
+        </mat-form-field>
+    <ng-container *ngIf="(lessons$ |async) as lessons">
+<table class="table table bg-info">
+    <thead>
+        <tr>
+            <th>abbdd</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tdlesson of lessons">
+            <td>
+            {{tdlesson.seqNo}}
+            </td>
+            <td>{{tdlesson.description}}</td>
+            <td>{{tdlesson.duration}}</td>
+        </tr>
+    </tbody>
+</table>
+    </ng-container>
+
