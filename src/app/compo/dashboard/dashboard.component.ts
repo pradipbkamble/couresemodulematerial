@@ -11,6 +11,7 @@ import { CourseService } from 'src/app/service/course.service';
 export class DashboardComponent implements OnInit {
 
   constructor(private _course:CourseService) { }
+  isloading:boolean=false
 cardobj!:Icource[]
 begainercourse!:Icource[]
 advancecourse!:Icource[]
@@ -21,6 +22,9 @@ advancecourse$!:Observable<Array<Icource>>//when we use observable the dont subs
 
 
   ngOnInit(): void {
+    this._course.loader$.subscribe(res=>
+      this.isloading=res
+    )
   this.courseaddvanbegsimpal()
    this._course.updsub$.subscribe(res=>{
     console.log(res);

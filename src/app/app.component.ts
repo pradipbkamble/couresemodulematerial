@@ -1,21 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CourseService } from './service/course.service';
-import { Icource } from './interface/course';
+
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  courceobj!:Icource[]
+export class AppComponent implements OnInit{
+  isloading=false
   title = 'couresemodulematerial';
-  constructor(private _course:CourseService){
+  constructor(){
+
+  }
+  ngOnInit(): void {
+    this.isloading=true
+   
     
-  
-  
-
-
-
   }
 }

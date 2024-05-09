@@ -13,7 +13,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -26,7 +26,7 @@ import {MatInputModule} from '@angular/material/input';
 let materialarr=[MatCardModule,MatIconModule,MatButtonModule,
     MatToolbarModule,MatFormFieldModule,MatDialogModule,
     MatSnackBarModule,MatListModule,MatSidenavModule,MatTabsModule,
-    MatSelectModule,MatDatepickerModule,MatNativeDateModule,MatInputModule]
+    MatSelectModule,MatDatepickerModule,MatNativeDateModule,MatInputModule,MatProgressSpinnerModule]
 @NgModule({
     declarations:[
         

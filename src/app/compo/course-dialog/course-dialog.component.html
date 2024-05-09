@@ -1,9 +1,9 @@
-
-
+  
 <form [formGroup]="courseForm">
     <mat-form-field appearance="legacy" class="w-100">
         <mat-label>Description</mat-label>
         <input matInput placeholder="Placeholder" formControlName="description">
+        
       </mat-form-field>
       <mat-form-field appearance="legacy" class="w-100">
         <mat-label>Select Category</mat-label>
@@ -28,7 +28,7 @@
         <mat-label>Long Description</mat-label>
         <textarea matInput placeholder="Long Description here.." formControlName="longDescription"></textarea>
       </mat-form-field>
-            
+      
       <mat-card-actions>
         <button mat-raised-button color="primary" type="button" (click)="close()">Close</button>
         <button mat-raised-button color="accent" (click)="updatefun()"  type="button">update</button>

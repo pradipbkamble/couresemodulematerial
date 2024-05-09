@@ -1,5 +1,8 @@
 
 <div class="course">
+    <div class="spineer" *ngIf="isloading">
+        <mat-spinner></mat-spinner>
+    </div>
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <ng-container *ngIf="(courseObj$ |async) as course">
@@ -13,7 +16,7 @@
         </div>
     </div>
 </div>
-<div class="col-md-8 offset-md-2">
+<div class="col-md-8 offset-md-2 my-4">
     <form [formGroup]="lessonForm">
         <mat-form-field>
             <!-- <input type="text" matInput placeholder="Search Items here.." class="my-4 w-100"

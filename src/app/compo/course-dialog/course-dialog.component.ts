@@ -4,13 +4,14 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Icource } from 'src/app/interface/course';
 import { CourseService } from 'src/app/service/course.service';
 
+
 @Component({
   selector: 'app-course-dialog',
   templateUrl: './course-dialog.component.html',
   styleUrls: ['./course-dialog.component.scss']
 })
 export class CourseDialogComponent implements OnInit {
-
+  
   courcedata!:Icource;
   courseForm!:FormGroup
   constructor(@Inject(MAT_DIALOG_DATA) datac: Icource,private fb:FormBuilder,
@@ -38,11 +39,15 @@ formfolder(){
   return this.courseForm.controls
 }
 updatefun(){
+  this._courseser.loader$.next(true)
 let updobj={...this.courseForm.value,id:this.courcedata.id}
 this._courseser.fetchupdate(updobj).subscribe(res=>{
   console.log(res);
-  this._courseser.updsub$.next(true)
+ 
+  this._courseser.updsub$.next(updobj)
   this._dialogref.close(updobj)
+  // this._courseser.loader$.next(false)
+  setTimeout(()=>{this._courseser.loader$.next(false)},4000)
 })
 }
 close(){

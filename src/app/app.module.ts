@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SinglecourseComponent } from './compo/singlecourse/singlecourse.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,9 @@ import { SinglecourseComponent } from './compo/singlecourse/singlecourse.compone
     HttpClientModule,
     courcemodul,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
+
     
   ],
   providers: [],

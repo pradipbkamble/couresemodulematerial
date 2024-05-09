@@ -15,10 +15,17 @@ export class SinglecourseComponent implements OnInit {
 lessons$! : Observable<Ilessons[]>;
 courseid!:string
 lessonForm!:FormGroup
+isloading:boolean=false
   constructor(private _route:ActivatedRoute,private _courses:CourseService ) { }
 
   ngOnInit(): void {
     this.FormG()
+    this._courses.loader$.subscribe(res=>{
+      console.log(res)
+    this.isloading=res
+  }
+      
+    )
     this.courseid=this._route.snapshot.params['courseId']
 this.courseObj$=this._courses.viewsinglecard(this.courseid)
 // this.keyup()
